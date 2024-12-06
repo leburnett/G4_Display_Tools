@@ -3,11 +3,11 @@ function create_processing_settings()
     settings = struct;
 
     %% Save settings
-    settings_file_path = 'C:\matlabroot\G4_Protocols\nested_RF_stimulus\protocols\RHS\protocol1_4reps_12px_6px_RHS_2sbkg_200msfl_50msint_12-03-24_15-25-60\processing_settings';
+    settings_file_path = '/Users/burnettl/Documents/Projects/nested_RF_stimulus/protocol1_4reps_12px_6px_LHS_2sbkg_200msfl_50msint_11-27-24_15-02-95/processing_settings';
 
     %% General settings
     settings.trial_options = [1 0 0];
-    settings.path_to_protocol = 'C:\matlabroot\G4_Protocols\nested_RF_stimulus\protocols\RHS\protocol1_4reps_12px_6px_RHS_2sbkg_200msfl_50msint_12-03-24_15-25-60\protocol1_4reps_12px_6px_RHS_2sbkg_200msfl_50msint_12-03-24_15-25-60.g4p';
+    settings.path_to_protocol = '/Users/burnettl/Documents/Projects/nested_RF_stimulus/protocol1_4reps_12px_6px_LHS_2sbkg_200msfl_50msint_11-27-24_15-02-95/protocol1_4reps_12px_6px_LHS_2sbkg_200msfl_50msint_11-27-24_15-02-95.g4p';
    % settings.channel_order = {'LmR_chan', 'L_chan', 'R_chan', 'F_chan', 'Frame Position', 'LmR', 'LpR'};
     settings.channel_order = {'Frame Position', 'voltage'};
     settings.hist_datatypes = {'Frame Position', 'LmR', 'LpR'};
