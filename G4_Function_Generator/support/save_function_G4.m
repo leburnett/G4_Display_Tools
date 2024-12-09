@@ -51,7 +51,7 @@ Data_to_write = [Header_block Data];
 param.size = length(Data);
 
 %save .mat file
-matFileName = fullfile(save_dir, [num2str(param.ID,'%04d') '_' filename '_G4.mat']);
+matFileName = fullfile(save_dir, strcat(num2str(param.ID,'%04d'), '_', filename, '_G4.mat'));
 if exist(matFileName,'file')
     error('function .mat file already exists in save folder with that name');
 end
