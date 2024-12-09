@@ -2,9 +2,10 @@ function create_grid_plot(dark_data, light_data, grid_rows, grid_columns, plot_c
     
 %% Need to switch back to passing in all data. WIll want to plot each rep individually
 % in light color and then the average thicker on each axis. 
-    
+    fignum = 1;
     for cond = 1:length(dark_data)
-        fig = figure; 
+        fig(fignum) = figure; 
+        fignum = fignum + 1;
         ts = timestamps{cond};
         for rep = 1:size(dark_data{cond},3)
             rep_data_dark(rep,:,:) = squeeze(dark_data{cond}(plot_chan, 1, rep, :, :));
@@ -50,8 +51,10 @@ function create_grid_plot(dark_data, light_data, grid_rows, grid_columns, plot_c
        
 
         hold off 
-        % savefig(fullfile(exp_folder, dark_plot_title));
-        newfig = figure;
+
+        fig(fignum) = figure;
+        fignum = fignum + 1;
+
         x = 1:length(gaussValsDark{cond});
         y = gaussValsDark{cond};
         f = gaussFitsDark{cond};
@@ -59,7 +62,8 @@ function create_grid_plot(dark_data, light_data, grid_rows, grid_columns, plot_c
         sgtitle(dark_gauss_title);
         % savefig(fullfile(exp_folder, dark_gauss_title));
 
-        figure();
+        fig(fignum) = figure;
+        fignum = fignum + 1;
 
         for lframe = 1:size(avg_data_light,1)
              if size(avg_data_light,1) > 32
@@ -96,7 +100,8 @@ function create_grid_plot(dark_data, light_data, grid_rows, grid_columns, plot_c
         rep_data_dark = [];
         rep_data_light = [];
 
-        figure();
+        fig(fignum) = figure;
+        fignum = fignum + 1;
         x = 1:length(gaussValsLight{cond});
         y = gaussValsLight{cond};
         f = gaussFitsLight{cond};
@@ -108,5 +113,7 @@ function create_grid_plot(dark_data, light_data, grid_rows, grid_columns, plot_c
 
         
     end
+
+    savefig(fig, fullfile(exp_folder, 'GridAndGaussianPlots.fig'));
 
 end
