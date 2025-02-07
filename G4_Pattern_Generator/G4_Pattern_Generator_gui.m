@@ -65,10 +65,10 @@ sdata.color = [0 1 0; 0.6 0 0.9];
 s2data.enable = [0 0];
 s2data.sa_mask = [0 0 pi 0];
 s2data.long_lat_mask = [-pi pi -pi/2 pi/2 0];
-handles.arena_folder = 'C:\matlabroot\G4\Arena';
-handles.scripts_folder = 'C:\matlabroot\G4\Scripts';
+handles.arena_folder = '/Users/burnettl/Documents/GitHub/G4_Display_Tools';
+handles.scripts_folder = '/Users/burnettl/Documents/GitHub/G4_Display_Tools';
 handles.arena_file = 'arena_parameters.mat';
-set(handles.text26, 'String', 'C:\matlabroot\G4');
+set(handles.text26, 'String', '/Users/burnettl/Documents/GitHub/G4_Display_Tools');
 if exist(fullfile(handles.arena_folder, handles.arena_file),'file')
     load(fullfile(handles.arena_folder, handles.arena_file));
     s3data.arena_pitch = rad2deg(aparam.rotations(2));
