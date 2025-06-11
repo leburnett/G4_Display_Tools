@@ -53,8 +53,8 @@ function configure_arena_OpeningFcn(hObject, eventdata, handles, varargin)
 % varargin   command line arguments to configure_arena (see VARARGIN)
 
 handles.gui1tag = findobj('Tag','G4_Pattern_Generator_gui');
-handles.arena_folder = 'C:\matlabroot\G4\Arena';
-handles.scripts_folder = 'C:\matlabroot\G4\Scripts';
+handles.arena_folder = '/Users/burnettl/Documents/GitHub/G4_Display_Tools';
+handles.scripts_folder = '/Users/burnettl/Documents/GitHub/G4_Display_Tools';
 handles.arena_file = 'arena_parameters.mat';
 arena_fullfile = fullfile(handles.arena_folder, handles.arena_file);
 
